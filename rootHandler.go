@@ -5,5 +5,6 @@ import "fmt"
 
 func rootHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("W funkcji rootHandler")
-	return
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte("Gorilla!\n"))
 }
