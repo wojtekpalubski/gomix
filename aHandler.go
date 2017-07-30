@@ -15,3 +15,12 @@ func aIdHandler(w http.ResponseWriter, r *http.Request) {
 	// w.Write([]byte("w aIdhandler"))
 	w.WriteHeader(http.StatusOK)
 }
+
+func aNazwaHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("W funkcji aNazwaHandler")
+	vars := mux.Vars(r)
+
+	fmt.Fprintf(w, "/a/nazwa: %v\n", vars["nazwa"])
+	// w.Write([]byte("w aIdhandler"))
+	w.WriteHeader(http.StatusOK)
+}

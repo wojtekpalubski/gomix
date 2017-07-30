@@ -13,7 +13,8 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", rootHandler)
 	r.HandleFunc("/a", rootHandler)
-	r.HandleFunc("/a/{id}", aIdHandler)
+	r.HandleFunc("/a/{id:[0-9]+}", aIdHandler)
+	r.HandleFunc("/a/{nazwa:[a-zA-z][a-zA-z0-9]+}", aNazwaHandler)
 
 	r.Walk(func(route *mux.Route, router *mux.Router, ancestors []*mux.Route) error {
 		t, err := route.GetPathTemplate()
