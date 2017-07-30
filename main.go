@@ -35,7 +35,7 @@ func main() {
 		return nil
 	})
 
-	serwerport := ":8000"
+	serwerport := getPort()
 	fmt.Println("Startuje serwer", serwerport)
 	log.Fatal(http.ListenAndServe(serwerport, r))
 	fmt.Println("Serwer wystartowal")
