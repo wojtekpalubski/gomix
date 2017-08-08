@@ -14,6 +14,7 @@ func main() {
 	r.HandleFunc("/", rootHandler)
 	r.HandleFunc("/a", rootHandler)
 	r.HandleFunc("/a/{id:[0-9]+}", aIdHandler)
+	r.HandleFunc("/a/{id:[0-9]+}", aIdHandlerPost).Methods("POST")
 	r.HandleFunc("/a/{nazwa:[a-zA-z][a-zA-z0-9]+}", aNazwaHandler)
 	r.HandleFunc("/hostinfo", hostinfoHandler)
 	r.HandleFunc("/health", healthHandler)
